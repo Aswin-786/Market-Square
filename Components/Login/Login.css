@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .loginParentDiv {
+    @apply border-2 border-solid border-black w-96 p-3 absolute;
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md flex flex-col items-center justify-center;
+  }
+
+  .loginParentDiv .input {
+    @apply outline-transparent border-l-transparent border-t-transparent border-r-transparent;
+  }
+
+  .loginParentDiv button {
+    @apply w-full h-12 bg-gre text-yellow-50 font-extrabold;
+  }
+
+  .loginParentDiv button:hover {
+    @apply bg-white text-gre border-4 border-solid border-gre;
+  }
+
+  .loginParentDiv a {
+    @apply flex justify-center cursor-pointer;
+  }
+
+}
