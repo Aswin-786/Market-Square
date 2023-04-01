@@ -11,7 +11,7 @@ function Banner() {
             <span>ALL CATEGORIES</span>
             <Arrow></Arrow>
           </div>
-          <div className=" flex ml-4 [&>*]:mr-4 sm:hidden">
+          <div className=" md:flex ml-4 [&>*]:mr-4 sm:hidden">
             <span>Cars</span>
             <span>Motorcy...</span>
             <span>Mobile Ph...</span>
@@ -21,7 +21,7 @@ function Banner() {
             <span>For Rent: House & Apart...</span>
           </div>
         </div>
-        <div className="relative w-full sm:relative">
+        <div className="md:relative md:w-full sm:relative">
           <img
             className='w-full'
             src="../../../Images/banner copy.png"
