@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  .signupParentDiv {
+
+    @apply border-2 border-solid border-black w-80 p-5;
+    @apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
+    @apply rounded-md;
+
+  }
+
+  .signupParentDiv .input {
+
+    @apply border-2 border-solid rounded-md;
+
+  }
+
+  .signupParentDiv button {
+
+    @apply w-full h-12 bg-gre text-yellow-100 font-extrabold rounded-md;
+
+  }
+
+  .signupParentDiv button:hover {
+
+    @apply bg-white text-gre border-gre border-2 border-solid;
+
+  }
+
+  .signupParentDiv a {
+
+    @apply flex justify-center cursor-pointer;
+
+  }
+
+}
