@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .footerParentDiv {
+    @apply w-full;
+  }
+
+  .footerParentDiv .content {
+    @apply flex justify-between items-center bg-slate-200 p-4;
+  }
+
+  .footerParentDiv .content .heading {
+    @apply text-2xl font-bold;
+  }
+
+  .footerParentDiv .content .heading p {
+    @apply underline mb-2;
+  }
+
+  .footerParentDiv .footer {
+    @apply flex justify-between items-center p-3 text-yellow-100 bg-gre;
+  }
+
+  .footerParentDiv .footer p {
+    @apply m-0;
+  }
+}
