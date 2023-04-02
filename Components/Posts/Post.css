@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .postParentDiv {
+    @apply overflow-hidden;
+  }
+
+  .moreView {
+    @apply mx-4 my-5 px-4 py-5 bg-slate-300 rounded-md;
+  }
+
+  .heading {
+    @apply flex justify-between items-center w-full;
+  }
+
+  .heading :first-child {
+    @apply text-2xl text-gre;
+  }
+
+  .heading :last-child {
+    @apply text-sm text-gre;
+  }
+
+  .recommendations .cards {
+    @apply flex;
+  }
+
+  .moreView .cards {
+    @apply whitespace-nowrap overflow-hidden;
+  }
+
+  .card {
+    @apply mr-4 p-3 w-56 h-72 inline-block cursor-pointer rounded-lg bg-slate-100 transition-all;
+    @apply hover:scale-95 transition-all;
+  }
+
+  .card .favorite {
+    @apply flex justify-end items-center;
+  }
+
+  .card .image {
+    @apply flex justify-center items-center;
+  }
+
+  .card .image img {
+    @apply h-24 max-w-full max-h-full min-h-full text-center;
+  }
+
+  .card .content .rate {
+    @apply mt-3 text-lg font-bold;
+  }
+
+  .card .content .kilometer {
+    @apply text-base;
+  }
+
+  .card .content .name {
+    @apply text-xs;
+  }
+
+  .card .date {
+    @apply flex justify-end text-xs;
+  }
+
+  .recommendations {
+    @apply m-5;
+  }
+
+  .recommendations .heading span {
+    @apply text-2xl text-gre
+  }
+}
