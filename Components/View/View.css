@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .viewParentDiv {
+    @apply pt-16 flex;
+  }
+
+  .viewParentDiv .imageShowDiv {
+    @apply p-4 w-8/12 h-full;
+  }
+
+  .viewParentDiv .imageShowDiv img {
+    @apply w-full h-5/6 object-contain;
+  }
+
+  .viewParentDiv .rightSection {
+    @apply p-4 mt-12 w-1/4;
+  }
+
+  .viewParentDiv .rightSection .productDetails :first-child {
+    @apply font-bold mb-3 text-gre text-3xl ;
+  }
+
+  .viewParentDiv .rightSection .productDetails {
+    @apply border-2 border-solid border-black p-2 rounded-md w-full mb-8;
+  }
+
+  .viewParentDiv .rightSection .contactDetails {
+    @apply border-2 border-solid border-black p-2 rounded-md ;
+  }
+
+  .viewParentDiv .rightSection .contactDetails :first-child {
+    @apply text-xl font-bold text-gre p-0;
+  }
+}
