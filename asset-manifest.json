@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/React-OLX-Clone/static/css/main.6aaf9ab4.css",
+    "main.js": "/React-OLX-Clone/static/js/main.ee5c537d.js",
+    "static/js/787.76e80f40.chunk.js": "/React-OLX-Clone/static/js/787.76e80f40.chunk.js",
+    "static/media/olx-logo.png": "/React-OLX-Clone/static/media/olx-logo.b3f099a2fe7978c70944.png",
+    "index.html": "/React-OLX-Clone/index.html",
+    "main.6aaf9ab4.css.map": "/React-OLX-Clone/static/css/main.6aaf9ab4.css.map",
+    "main.ee5c537d.js.map": "/React-OLX-Clone/static/js/main.ee5c537d.js.map",
+    "787.76e80f40.chunk.js.map": "/React-OLX-Clone/static/js/787.76e80f40.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6aaf9ab4.css",
+    "static/js/main.ee5c537d.js"
+  ]
+}
