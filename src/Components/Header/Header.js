@@ -12,22 +12,23 @@ function Header() {
   const { user } = React.useContext(AuthContext)
   const { firebase } = React.useContext(FirebaseContext)
   const history = useHistory()
+
   function logout() {
     firebase.auth().signOut()
     history.push('/login')
   }
   return (
-    <div className="p-2 bg-slate-50 fixed w-full z-50">
+    <div className="p-2 bg-slate-50 fixed w-full z-50 sm:px-5">
       <div className=" w-full flex justify-between items-center">
         <div className="brandName">
           <OlxLogo></OlxLogo>
         </div>
-        <div className="w-64 h-12 flex items-center px-2 border-2 border-solid border-gray-900 rounded-md bg-white selection:border-cyan-400 selection:outline-cyan-400">
+        <div className="w-64 h-12 flex flex-row items-center px-2 border-2 border-solid border-gray-900 rounded-md bg-white selection:border-cyan-400 selection:outline-cyan-400 md:flex  sm:hidden">
           <Search></Search>
           <input className='border-transparent outline-transparent' type="text" />
           <Arrow></Arrow>
         </div>
-        <div className="productSearch">
+        <div className="productSearch md:flex sm:hidden ">
           <div className="input">
             <input
               type="text"
@@ -38,21 +39,20 @@ function Header() {
             <Search color="#ffffff"></Search>
           </div>
         </div>
-        <div className="language">
+        <div className="language md:flex sm:hidden">
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage">
-          {user ? <span>welcome:: {user.displayName} </span> :
+        <div className="loginPage border border-black border-x-transparent border-t-transparent ">
+          {user ? <span className='md:block sm:hidden'>welcome: {user.displayName} </span> :
             <span onClick={() => history.push('/login')} >Login</span>}
-          <hr />
         </div>
-        {user && <span onClick={logout}>Logout</span>}
-        <div onClick={() => history.push('/create')} className="sellMenu">
+        {user && <span className='cursor-pointer' onClick={logout}>Logout</span>}
+        <div onClick={() => history.push('/create')} className="sellMenu md:flex sm:flex">
           <SellButton></SellButton>
-          <div className="sellMenuContent">
+          <div className=" flex  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-bold tracking-widest text-sell">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            <span className='ml-2'>SELL</span>
           </div>
         </div>
       </div>
