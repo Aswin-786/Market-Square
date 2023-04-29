@@ -5,19 +5,19 @@
 @layer components {
 
   .viewParentDiv {
-    @apply pt-16 flex;
+    @apply pt-16 md:flex md:flex-row items-center sm:flex-col;
   }
 
   .viewParentDiv .imageShowDiv {
-    @apply p-4 w-8/12 h-full;
+    @apply p-4 md:w-[60%] sm:w-[100%] sm:flex sm:items-center sm:justify-center h-full;
   }
 
   .viewParentDiv .imageShowDiv img {
-    @apply w-full h-5/6 object-contain;
+    @apply  w-[60%];
   }
 
   .viewParentDiv .rightSection {
-    @apply p-4 mt-12 w-1/4;
+    @apply p-4 mt-12 md:w-1/4;
   }
 
   .viewParentDiv .rightSection .productDetails :first-child {
