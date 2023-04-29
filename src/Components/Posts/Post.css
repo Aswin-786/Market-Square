@@ -5,7 +5,7 @@
 @layer components {
 
   .postParentDiv {
-    @apply overflow-hidden;
+    @apply overflow-x-scroll;
   }
 
   .moreView {
@@ -13,7 +13,7 @@
   }
 
   .heading {
-    @apply flex justify-between items-center w-full;
+    @apply flex justify-between items-center w-full pb-4;
   }
 
   .heading :first-child {
@@ -29,12 +29,12 @@
   }
 
   .moreView .cards {
-    @apply whitespace-nowrap overflow-hidden;
+    @apply whitespace-nowrap overflow-x-auto;
   }
 
   .card {
-    @apply mr-4 p-3 w-56 h-72 inline-block cursor-pointer rounded-lg bg-slate-100 transition-all;
-    @apply hover:scale-95 transition-all;
+    @apply mr-4 p-3 my-2 md:w-56 md:h-72 sm:w-48 sm:h-64 inline-block cursor-pointer rounded-lg bg-slate-100 transition-all;
+    @apply hover:scale-95 transition-all overflow-x-auto ;
   }
 
   .card .favorite {
