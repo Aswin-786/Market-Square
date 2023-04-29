@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import OlxLogo from '../../assets/OlxLogo';
 import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
@@ -13,6 +12,7 @@ function Header() {
   const { firebase } = React.useContext(FirebaseContext)
   const history = useHistory()
 
+  // logout
   function logout() {
     firebase.auth().signOut()
     history.push('/login')
@@ -20,15 +20,10 @@ function Header() {
   return (
     <div className="p-2 bg-slate-50 fixed w-full z-50 sm:px-5">
       <div className=" w-full flex justify-between items-center">
-        <div className="brandName">
-          <OlxLogo></OlxLogo>
+        <div className="font-extrabold text-2xl">
+          Market Square
         </div>
-        <div className="w-64 h-12 flex flex-row items-center px-2 border-2 border-solid border-gray-900 rounded-md bg-white selection:border-cyan-400 selection:outline-cyan-400 md:flex  sm:hidden">
-          <Search></Search>
-          <input className='border-transparent outline-transparent' type="text" />
-          <Arrow></Arrow>
-        </div>
-        <div className="productSearch md:flex sm:hidden ">
+        <div className="productSearch">
           <div className="input">
             <input
               type="text"
@@ -39,18 +34,41 @@ function Header() {
             <Search color="#ffffff"></Search>
           </div>
         </div>
-        <div className="language md:flex sm:hidden">
+        <div className="language">
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage border border-black border-x-transparent border-t-transparent ">
-          {user ? <span className='md:block sm:hidden'>welcome: {user.displayName} </span> :
-            <span onClick={() => history.push('/login')} >Login</span>}
+        <div className="loginPage">
+          {
+            // if user diplay name otherwise show login
+            user
+              ?
+              <span className='user'>
+                {user.displayName}
+              </span>
+              :
+              <span
+                className='login'
+                onClick={() => history.push('/login')} >
+                Login
+              </span>
+          }
+          {
+            // logout section
+            user
+            &&
+            <span
+              className='logout'
+              onClick={logout}>
+              Logout
+            </span>
+          }
         </div>
-        {user && <span className='cursor-pointer' onClick={logout}>Logout</span>}
-        <div onClick={() => history.push('/create')} className="sellMenu md:flex sm:flex">
+        <div
+          onClick={() => history.push('/create')}
+          className="sellMenu">
           <SellButton></SellButton>
-          <div className=" flex  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-bold tracking-widest text-sell">
+          <div className="sellButton">
             <SellButtonPlus></SellButtonPlus>
             <span className='ml-2'>SELL</span>
           </div>
