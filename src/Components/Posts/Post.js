@@ -1,11 +1,13 @@
 import React from 'react';
 import Heart from '../../assets/Heart';
-import { FirebaseContext } from '../../Store/Context';
+import { FirebaseContext, AuthContext } from '../../Store/Context';
 import { PostContext } from '../../Store/PostContext';
 import './Post.css';
 import { useHistory } from 'react-router-dom';
 
+
 function Posts() {
+  const { user } = React.useContext(AuthContext)
   // setting products
   const [products, setProducts] = React.useState([])
   // firebase context
@@ -14,6 +16,7 @@ function Posts() {
   const { setPostDetails } = React.useContext(PostContext)
   // redirecting to pages
   const history = useHistory()
+  const [myPost, setMyPost] = React.useState([])
 
   React.useEffect(() => {
     firebase.firestore().collection('products').get()
@@ -28,9 +31,20 @@ function Posts() {
         // adding to products
         setProducts(allPost)
       })
-  }, [])
+  }, [firebase])
+
+  // after products updated checking the user added any products
+  React.useEffect(() => {
+    products.map((data) => {
+      if (user && (user.uid === data.userId)) {
+        setMyPost([data])
+      }
+    })
+  }, [products])
+
 
   return (
+
     <div className="postParentDiv">
       <div className="moreView">
         <div className="heading">
@@ -43,15 +57,15 @@ function Posts() {
             products.map((product) => {
               return (
                 <div
+                  key={product.id}
                   className="card"
                   onClick={() => {
-                    console.log({ product });
                     setPostDetails(product)
                     history.push('/view')
                   }}
                 >
                   <div className="favorite">
-                    <Heart></Heart>
+                    <Heart />
                   </div>
                   <div className="image">
                     <img src={product.url} alt="" />
@@ -72,29 +86,44 @@ function Posts() {
       </div>
       <div className="recommendations">
         <div className="heading">
-          <span>Fresh recommendations</span>
+          <span>My Post</span>
         </div>
-        <div className="cards">
-          <div className="card">
-            <div className="favorite">
-              <Heart></Heart>
-            </div>
-            <div className="image">
-              <img src="../../../Images/R15V3.jpg" alt="" />
-            </div>
-            <div className="content">
-              <p className="rate">&#x20B9; 250000</p>
-              <span className="kilometer">Two Wheeler</span>
-              <p className="name"> YAMAHA R15V3</p>
-            </div>
-            <div className="date">
-              <span>10/5/2021</span>
-            </div>
-          </div>
-        </div>
+        <span className='text-gray-800 '>{(myPost.length === 0) && 'No products listed yet!'}</span>
+        {
+          // through added user products
+          myPost.map((product) => {
+            return (
+              <div
+                key={product.id}
+                className="card"
+                onClick={() => {
+                  setPostDetails(product)
+                  history.push('/view')
+                }}
+              >
+                <div className="favorite">
+                  <Heart />
+                </div>
+                <div className="image">
+                  <img src={product.url} alt="" />
+                </div>
+                <div className="content">
+                  <p className="rate">&#x20B9; {product.price}</p>
+                  <span className="kilometer">{product.category}</span>
+                  <p className="name">{product.name}</p>
+                </div>
+                <div className="date">
+                  <span>{product.createdAt}</span>
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
     </div>
+
   );
 }
+
 
 export default Posts;
