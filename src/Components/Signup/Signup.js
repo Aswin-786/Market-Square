@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './Signup.css';
-import Logo from '../../olx-logo.png';
 import { FirebaseContext } from '../../Store/Context';
 import { useHistory } from 'react-router-dom'
 
@@ -42,7 +41,7 @@ export default function Signup() {
   return (
     <div>
       <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo} alt=''></img>
+        <h1 className='text-4xl py-10 font-semibold'>Market Square</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="fname">Username</label>
           <br />
@@ -51,6 +50,7 @@ export default function Signup() {
             type="text"
             id="fname"
             name="name"
+            required
             value={userName}
             onChange={(e) => { setUserName(e.target.value) }}
           />
@@ -62,6 +62,7 @@ export default function Signup() {
             type="email"
             id="fname1"
             name="email"
+            required
             value={email}
             onChange={(e) => { setEmail(e.target.value) }}
           />
@@ -73,6 +74,7 @@ export default function Signup() {
             type="number"
             id="name"
             name="phone"
+            required
             value={phone}
             onChange={(e) => { setPhone(e.target.value) }}
           />
@@ -84,6 +86,7 @@ export default function Signup() {
             type="password"
             id="name1"
             name="password"
+            required
             value={password}
             onChange={(e) => { setPassword(e.target.value) }}
           />
