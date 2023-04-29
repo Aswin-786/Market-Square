@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../../olx-logo.png';
 import './Login.css';
 import { FirebaseContext } from '../../Store/Context'
 import { useContext } from 'react';
@@ -24,7 +23,7 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo} alt=''></img>
+        <h1 className='text-4xl py-10 font-semibold'>Market Square</h1>
         <form onSubmit={handleLogin}>
           <label htmlFor="fname">Email</label>
           <br />
