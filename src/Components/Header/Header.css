@@ -10,55 +10,85 @@
   }
 
   .productSearch {
-    @apply w-560 h-12 border-2 border-solid border-border flex items-center bg-white justify-between rounded-md
+    @apply w-560 h-12 border-2 border-solid border-border flex items-center bg-white justify-between rounded-md md:flex sm:hidden mx-2 ;
   }
 
   .productSearch .input {
-    @apply w-full h-full flex
-   }
+    @apply w-full h-full flex;
+  }
 
   .productSearch .input input {
-    @apply border-transparent outline-transparent w-full items-center
+    @apply border-transparent outline-transparent w-full items-center;
   }
 
   .productSearch .searchAction {
-    @apply w-12 h-12 relative flex cursor-pointer bg-gre border-transparent outline-none rounded-md
+    @apply w-12 h-12 relative flex cursor-pointer bg-gre border-transparent outline-none rounded-md;
   }
 
   .productSearch .searchAction svg {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fill-white
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fill-white;
   }
 
   .language {
-    @apply h-12 flex items-center
+    @apply h-12 flex items-center  md:flex sm:hidden;
   }
 
   .language span {
-    @apply text-lg whitespace-normal text-ellipsis font-bold mr-5
+    @apply text-lg whitespace-normal text-ellipsis font-bold mr-2;
   }
 
   .span {
-    @apply no-underline whitespace-normal text-ellipsis font-bold mr-5 text-sm
+    @apply no-underline whitespace-normal text-ellipsis font-bold mr-5 text-sm;
+  }
+
+  .loginPage {
+    @apply flex flex-row gap-4 ;
+  }
+
+  .loginPage .user {
+   @apply md:block border border-black border-x-transparent border-t-transparent uppercase font-semibold;
+  }
+
+  .loginPage .login {
+    @apply cursor-pointer px-3 hover:opacity-40 transition-all;
+  }
+  
+  .loginPage .logout {
+    @apply cursor-pointer px-5 hover:opacity-40  transition-all;
   }
 
   .loginPage hr {
-    @apply mt-2 h-2 bg-black
+    @apply mt-2 h-2 bg-black;
   }
 
   .loginPage a {
-    @apply no-underline
+    @apply no-underline;
   }
 
   .sellMenu {
-    @apply relative cursor-pointer
+    @apply relative cursor-pointer flex hover:scale-105 transition-all;
   }
 
-  @media only screen and (max-width: 700px) {
+  .sellMenu .sellButton {
+    @apply flex  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-sm font-bold tracking-widest text-sell;
+  }
+
+  @media only screen and (max-width: 768px) {
 
     .placeSearch,
+    .productSearch
+    {
+      @apply hidden;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    #search,
     .productSearch,
-    .sellMenu {
-      @apply hidden
+    .language 
+    {
+      @apply hidden;
     }
   }
 }
