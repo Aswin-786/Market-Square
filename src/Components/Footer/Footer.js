@@ -6,10 +6,10 @@ function Footer() {
     <div className="footerParentDiv">
       <div className="content">
         <div>
-          <div className="heading">
+          <div className="heading popular">
             <p>POPULAR LOCATIONS</p>
           </div>
-          <div className="list">
+          <div className="list popular">
             <ul>
               <li>kolkata</li>
               <li>Mumbai</li>
@@ -19,21 +19,21 @@ function Footer() {
           </div>
         </div>
         <div>
-          <div className="heading">
+          <div className="heading about">
             <p>ABOUT US</p>
           </div>
           <div className="list">
             <ul>
-              <li>About OLX Group</li>
+              <li>About Market Square</li>
               <li>Careers</li>
               <li>Contact Us</li>
-              <li>OLXPeople</li>
+              <li>Market Square People</li>
             </ul>
           </div>
         </div>
         <div>
-          <div className="heading">
-            <p>OLX</p>
+          <div className="heading details ">
+            <p>Market Square</p>
           </div>
           <div className="list">
             <ul>
@@ -45,8 +45,8 @@ function Footer() {
         </div>
       </div>
       <div className="footer">
-        <p>Other Countries Pakistan - South Africa - Indonesia</p>
-        <p>Free Classifieds in India. © 2006-2021 OLX</p>
+        <p className='popular'>Other Countries Pakistan - South Africa - Indonesia</p>
+        <p>Free Classifieds in India. © 2023 Market Square</p>
       </div>
     </div>
   );
