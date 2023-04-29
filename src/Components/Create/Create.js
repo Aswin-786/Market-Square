@@ -61,7 +61,7 @@ const Create = () => {
               name="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-
+              required
             />
             <br />
             <label htmlFor="fname">Category</label>
@@ -71,6 +71,7 @@ const Create = () => {
               type="text"
               id="fname"
               name="category"
+              required
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             />
@@ -82,6 +83,7 @@ const Create = () => {
               type="number"
               id="fname"
               name="Price"
+              required
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
@@ -90,7 +92,10 @@ const Create = () => {
           <br />
           <img alt="Posts" width="200px" height="200px" src={image ? URL.createObjectURL(image) : " "}></img>
           <br />
-          <input onChange={(e) => setImage(e.target.files[0])} type="file" />
+          <input
+            onChange={(e) => setImage(e.target.files[0])}
+            type="file"
+            required />
           <br />
           <button onClick={handleUpload} className="uploadBtn">upload and Submit</button>
         </div>
