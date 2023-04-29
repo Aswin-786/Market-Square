@@ -14,8 +14,11 @@ module.exports = {
         'top_': '#23e5db',
         'left_': '#ffce32',
         'right_': '#3a77ff',
-       'border': '#002f34',
-       'gre':'#002f34'
+        'border': '#002f34',
+        'gre': '#002f34'
+      },
+      screens: {
+        sm: '300px'
       }
     },
   },
