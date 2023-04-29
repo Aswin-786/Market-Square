@@ -24,19 +24,20 @@ export default function View() {
         })
       })
   }, [])
-  
+
   return (
+
     <div className="viewParentDiv">
       <div className="imageShowDiv">
         <img
-          src={PostDetails ? PostDetails.url : ''}
+          src={PostDetails && PostDetails.url }
           alt=""
         />
       </div>
       <div className="rightSection">
-        <div className="productDetails">
+        <div className="productDetails ">
           <p>&#x20B9; {PostDetails && PostDetails.price} </p>
-          <span>{PostDetails && PostDetails.name}</span>
+          <span className='font-semibold'>{PostDetails && PostDetails.name}</span>
           <p>{PostDetails && PostDetails.category}</p>
           <span>{PostDetails && PostDetails.createdAt}</span>
         </div>
@@ -47,5 +48,7 @@ export default function View() {
         </div>
       </div>
     </div>
+
   );
+  
 }
