@@ -23,9 +23,9 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <h1 className='text-4xl py-10 font-semibold'>Market Square</h1>
+        <h1 className='md:text-4xl text-2xl text-center py-10 font-semibold'>Market Square</h1>
         <form onSubmit={handleLogin}>
-          <label htmlFor="fname">Email</label>
+          <label htmlFor="fname">Email:</label>
           <br />
           <input
             className="input"
@@ -36,7 +36,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <br />
-          <label htmlFor="lname">Password</label>
+          <label htmlFor="lname">Password:</label>
           <br />
           <input
             className="input"
