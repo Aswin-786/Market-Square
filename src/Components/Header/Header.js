@@ -18,9 +18,12 @@ function Header() {
     history.push('/login')
   }
   return (
-    <div className="p-2 bg-slate-50 fixed w-full z-50 sm:px-5">
+    <div className="p-2 bg-slate-50 fixed w-full z-50 sm:px-3">
       <div className=" w-full flex justify-between items-center">
-        <div className="font-extrabold text-2xl">
+        <div
+           className="font-extrabold md:text-2xl text-xl cursor-pointer hover:opacity-60"
+           onClick={() => history.push('/')}
+        >
           Market Square
         </div>
         <div className="productSearch">
