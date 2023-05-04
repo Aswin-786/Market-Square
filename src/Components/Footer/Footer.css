@@ -9,7 +9,11 @@
   }
 
   .footerParentDiv .content {
-    @apply flex justify-between items-center bg-slate-200 p-4;
+    @apply flex justify-between items-start bg-slate-200 p-4 ;
+  }
+
+  .footerParentDiv .popular {
+    @apply md:block sm:hidden;
   }
 
   .footerParentDiv .content .heading {
@@ -17,11 +21,15 @@
   }
 
   .footerParentDiv .content .heading p {
-    @apply underline mb-2;
+    @apply underline ;
+  }
+
+  .footerParentDiv .content .list {
+    @apply md:text-base text-xs ;
   }
 
   .footerParentDiv .footer {
-    @apply flex justify-between items-center p-3 text-yellow-100 bg-gre;
+    @apply flex justify-between items-center p-3 text-yellow-100 bg-gre text-sm;
   }
 
   .footerParentDiv .footer p {
