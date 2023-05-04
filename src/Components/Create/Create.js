@@ -11,6 +11,7 @@ const Create = () => {
   const [category, setCategory] = React.useState('')
   const [price, setPrice] = React.useState('')
   const [image, setImage] = React.useState(null)
+  const [error, setError] = React.useState(false)
 
   // firebase context
   const { firebase } = React.useContext(FirebaseContext)
@@ -23,6 +24,12 @@ const Create = () => {
 
   //form submit
   const handleUpload = () => {
+
+    // if image null show message
+    if (image == null) {
+      setError(true)
+      return
+    }
     // creating folder in firebase storage
     firebase.storage().ref(`/image/${image.name}`)
       // adding image to that folder
@@ -90,7 +97,7 @@ const Create = () => {
             <br />
           </form>
           <br />
-          <img alt="Posts" width="200px" height="200px" src={image ? URL.createObjectURL(image) : " "}></img>
+          <img alt="Posts" width="100px" height="100px" src={image ? URL.createObjectURL(image) : " "}></img>
           <br />
           <input
             onChange={(e) => setImage(e.target.files[0])}
@@ -98,6 +105,7 @@ const Create = () => {
             required />
           <br />
           <button onClick={handleUpload} className="uploadBtn">upload and Submit</button>
+          {error && <span className='text-red-500 text-xs text-center py-3'> ** upload image **  </span>}
         </div>
       </card>
     </Fragment>
