@@ -5,20 +5,20 @@
 @layer components {
 
   .loginParentDiv {
-    @apply border-2 border-solid border-black w-96 p-3 absolute;
+    @apply border-2 border-solid border-black md:w-96 w-[90%] p-3 absolute;
     @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md flex flex-col items-center justify-center;
   }
 
   .loginParentDiv .input {
-    @apply outline-transparent border-l-transparent border-t-transparent border-r-transparent;
+    @apply outline-transparent border-solid border-l-transparent border-t-transparent border-r-transparent my-2 text-gray-600;
   }
 
   .loginParentDiv button {
-    @apply w-full h-12 bg-gre text-yellow-50 font-extrabold;
+    @apply w-full h-12 bg-gre text-yellow-50 font-extrabold rounded-md mb-3;
   }
 
   .loginParentDiv button:hover {
-    @apply bg-white text-gre border-4 border-solid border-gre;
+    @apply bg-white text-gre border-2 border-solid border-gre;
   }
 
   .loginParentDiv a {
