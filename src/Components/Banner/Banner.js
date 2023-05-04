@@ -7,8 +7,8 @@ function Banner() {
   return (
     <div className="pt-16">
       <div className="">
-        <div className="flex px-4 py-3 ">
-          <div className="flex ">
+        <div className="flex px-4 py-3 md:text-base text-xs">
+          <div className="flex items-center ">
             <span>ALL CATEGORIES</span>
             <Arrow></Arrow>
           </div>
@@ -24,7 +24,7 @@ function Banner() {
         </div>
         <div className="md:relative md:w-full sm:relative">
           <img
-            className='w-full'
+            className='md:w-full md:h-full sm:h-[120px] object-cover object-left '
             src="../../../Images/banner copy.png"
             alt=""
           />
