@@ -84,43 +84,46 @@ function Posts() {
           }
         </div>
       </div>
-      <div className="recommendations">
+      
+      <div className="recommendations ">
         <div className="heading">
           <span>My Post</span>
         </div>
         <span className='text-gray-800 '>{(myPost.length === 0) && 'No products listed yet!'}</span>
-        {
-          // through products
-          products.map((product) => {
-            if (user && (user.uid === product.userId)) {
-              return (
-                <div
-                  key={product.id}
-                  className="card"
-                  onClick={() => {
-                    setPostDetails(product)
-                    history.push('/view')
-                  }}
-                >
-                  <div className="favorite">
-                    <Heart />
+        <div className="cards">
+          {
+            // through user products
+            products.map((product) => {
+              if (user && (user.uid === product.userId)) {
+                return (
+                  <div
+                    key={product.id}
+                    className="card"
+                    onClick={() => {
+                      setPostDetails(product)
+                      history.push('/view')
+                    }}
+                  >
+                    <div className="favorite">
+                      <Heart />
+                    </div>
+                    <div className="image">
+                      <img src={product.url} alt="" />
+                    </div>
+                    <div className="content">
+                      <p className="rate">&#x20B9; {product.price}</p>
+                      <span className="kilometer">{product.category}</span>
+                      <p className="name">{product.name}</p>
+                    </div>
+                    <div className="date">
+                      <span>{product.createdAt}</span>
+                    </div>
                   </div>
-                  <div className="image">
-                    <img src={product.url} alt="" />
-                  </div>
-                  <div className="content">
-                    <p className="rate">&#x20B9; {product.price}</p>
-                    <span className="kilometer">{product.category}</span>
-                    <p className="name">{product.name}</p>
-                  </div>
-                  <div className="date">
-                    <span>{product.createdAt}</span>
-                  </div>
-                </div>
-              )
-            }
-          })
-        }
+                )
+              }
+            })
+          }
+        </div>
       </div>
     </div>
 
