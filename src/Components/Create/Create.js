@@ -56,7 +56,7 @@ const Create = () => {
   return (
     <Fragment>
       <Header />
-      <card>
+      <div className='createPost'>
         <div className="centerDiv">
           <form>
             <label htmlFor="fname">Name</label>
@@ -107,7 +107,7 @@ const Create = () => {
           <button onClick={handleUpload} className="uploadBtn">upload and Submit</button>
           {error && <span className='text-red-500 text-xs text-center py-3'> ** upload image **  </span>}
         </div>
-      </card>
+      </div>
     </Fragment>
   );
 };
