@@ -4,14 +4,16 @@
 
 @layer components {
 
+  .createPost {
+    @apply flex items-center justify-center pt-24 ;
+  }
+
   .centerDiv {
-    @apply border-2 border-solid border-black w-max p-12 absolute;
-    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md;
+    @apply border-2 border-solid border-black md:w-max w-[85%] p-12 rounded-md;
   }
 
   .inputField {
-    @apply border-b-2 border-b-black outline-none mb-5;
-  }
+    @apply border-b-2 w-[70%] border-b-black outline-none mb-5;  }
 
   .uploadBtn {
     @apply mt-8 w-full h-12 bg-gre text-yellow-100 font-bold transition-all rounded-md;
