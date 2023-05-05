@@ -24,10 +24,6 @@
     @apply text-sm text-gre;
   }
 
-  .recommendations .cards {
-    @apply flex;
-  }
-
   .moreView .cards {
     @apply whitespace-nowrap overflow-x-auto;
   }
@@ -66,7 +62,11 @@
   }
 
   .recommendations {
-    @apply m-5;
+    @apply mx-4 my-5 px-4 py-5 bg-slate-200 rounded-md;
+  }
+
+  .recommendations .cards {
+    @apply whitespace-nowrap overflow-x-auto  overflow-auto;
   }
 
   .recommendations .heading span {
