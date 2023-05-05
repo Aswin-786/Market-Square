@@ -10,7 +10,7 @@
   }
 
   .loginParentDiv .input {
-    @apply outline-transparent border-solid border-l-transparent border-t-transparent border-r-transparent my-2 text-gray-600;
+    @apply border-2 border-solid rounded-md outline-transparent p-1 my-2
   }
 
   .loginParentDiv button {
