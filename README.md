@@ -3,7 +3,7 @@
 This is a new online marketplace called Market Square, built using ReactJS, Tailwind CSS, and Firebase. With Market Square, users can easily create an account using Firebase authentication, set up their seller profile, and upload images of the items they have for sale.
 Once a user has created a seller profile and uploaded their items, their listings will appear on the Market Square homepage. This makes it easy for buyers to browse all available items in one convenient location.
 
-live site: https://marketsquare.aswinkrishna.com
+live site: [MarketSquare](https://marketsquare.aswinkrishna.com)
 
 ## Getting Started
 
